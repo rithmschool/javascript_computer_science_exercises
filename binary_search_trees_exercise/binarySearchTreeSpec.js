@@ -119,7 +119,7 @@ describe("#toArray", function(){
 
 describe("#DFSPreOrder", function(){
 
-  binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(new Node(1)).insertIteratively(new Node(5)).insertIteratively(new Node(50))
+  binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(1).insertIteratively(5).insertIteratively(50)
 
   it("returns an array of values found with DFS Pre Order", function(){
     expect(binarySearchTree.DFSPreOrder()).to.deep.equal([15, 10, 1, 5, 12, 20, 50])
@@ -128,7 +128,7 @@ describe("#DFSPreOrder", function(){
 
 describe("#DFSInOrder", function(){
 
-  binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(new Node(1)).insertIteratively(new Node(5)).insertIteratively(new Node(50))
+  binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(1).insertIteratively(5).insertIteratively(50)
 
   it("returns an array of values found with DFS In Order", function(){
     expect(binarySearchTree.DFSInOrder()).to.deep.equal([1, 5, 10, 12, 15, 20, 50])
@@ -137,7 +137,7 @@ describe("#DFSInOrder", function(){
 
 describe("#DFSPostOrder", function(){
 
-  binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(new Node(1)).insertIteratively(new Node(5)).insertIteratively(new Node(50))
+  binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(1).insertIteratively(5).insertIteratively(50)
 
   it("returns an array of values found with DFS Post Order", function(){
     expect(binarySearchTree.DFSPostOrder()).to.deep.equal([5, 1, 12, 10, 50, 20, 15])
@@ -145,22 +145,51 @@ describe("#DFSPostOrder", function(){
 });
 
 describe("#BreadthFirstSearch", function(){
+  binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(1).insertIteratively(5).insertIteratively(50)
+
   it("returns an array of values found with Breadth First Search", function(){
     expect(binarySearchTree.BreadthFirstSearch()).to.deep.equal([15, 10, 20, 1, 12, 50, 5])
   });
 });
 
+
 describe("#remove", function(){
   it("should correctly remove a node with no children", function(){
-    expect(binarySearchTree.root).to.equal(null)
-    expect(binarySearchTree.hasOwnProperty('root')).to.equal(true)
+    binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(1).insertIteratively(5).insertIteratively(50)
+
+    binarySearchTree.remove(50)
+    expect(binarySearchTree.right.value).to.equal(20)
+    expect(binarySearchTree.right.right).to.equal(null)
+
+    binarySearchTree.remove(5)
+    expect(binarySearchTree.left.left.value).to.equal(1)
+    expect(binarySearchTree.left.left.right).to.equal(null)
   });
   it("should correctly remove a node with one child", function(){
-    expect(binarySearchTree.root).to.equal(null)
-    expect(binarySearchTree.hasOwnProperty('root')).to.equal(true)
+    binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(1).insertIteratively(5).insertIteratively(50)
+
+    binarySearchTree.remove(1)
+    expect(binarySearchTree.left.left.value).to.equal(5)
+    expect(binarySearchTree.left.left.left).to.equal(null)
+    expect(binarySearchTree.left.left.right).to.equal(null)
+
+    binarySearchTree.remove(20)
+    expect(binarySearchTree.right.value).to.equal(50)
+    expect(binarySearchTree.right.right).to.equal(null)
+    expect(binarySearchTree.right.left).to.equal(null)
   });
   it("should correctly remove a node with two children", function(){
-    expect(binarySearchTree.root).to.equal(null)
-    expect(binarySearchTree.hasOwnProperty('root')).to.equal(true)
+
+    binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(1).insertIteratively(5).insertIteratively(50).insertIteratively(60).insertIteratively(30).insertIteratively(25).insertIteratively(23).insertIteratively(24).insertIteratively(70)
+
+    binarySearchTree.remove(10)
+    expect(binarySearchTree.left.value).to.equal(12)
+    expect(binarySearchTree.left.left.value).to.equal(1)
+    expect(binarySearchTree.left.left.right.value).to.equal(5)
+
+    binarySearchTree.remove(50)
+    expect(binarySearchTree.right.value).to.equal(20)
+    expect(binarySearchTree.right.right.value).to.equal(60)
+    expect(binarySearchTree.right.right.left.value).to.equal(30)
   });
 });
