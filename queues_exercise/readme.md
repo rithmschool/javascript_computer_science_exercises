@@ -4,6 +4,10 @@ For this exercise you must get the tests to pass.
 
 #### Part I 
 
+- Write a constructor function for a `Queue`
+
+Implement the following methods on the `Queue.prototype`
+
 #### Part II 
 
 * Given a doubly linked list, implement a queue
