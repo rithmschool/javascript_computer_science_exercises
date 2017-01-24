@@ -5,8 +5,25 @@ For this exercise you must get the tests to pass.
 #### Part I 
 
 - Write a constructor function for a `Queue`
+    - it should have a size property initialized to 0   
 
 Implement the following methods on the `Queue.prototype`
+
+### enque
+
+This function adds the value to the end of the queue. This should be an O(1) operation and return the size of the queue.
+
+### dequeue
+
+This function removes the value at the beginning of the queue. This should be an O(1) operation and return the value removed.
+
+### peek
+
+This function returns the first values in the queue.
+
+### print
+
+This function console.log's all the values in the queue.
 
 #### Part II 
 
