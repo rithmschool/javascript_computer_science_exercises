@@ -4,7 +4,9 @@ For this exercise you must get the tests to pass.
 
 #### Part I 
 
-Write a constructor function for a stack
+- Write a constructor function for a `Stack`
+
+Implement the following methods on the `Stack.prototype`
 
 #### Part II
 

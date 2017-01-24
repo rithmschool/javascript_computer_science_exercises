@@ -46,14 +46,24 @@ Implement the following functions on the `BST.prototype`
 
 #### DFSPreOrder
 
+This function should search through each node in the binary search tree using pre-order depth first search and return an array containing each node's value.
+
 #### DFSInOrder
+
+This function should search through each node in the binary search tree using in-order depth first search and return an array containing each node's value.
 
 #### DFSPostOrder
 
+This function should search through each node in the binary search tree using post-order depth first search and return an array containing each node's value.
+
 #### BreadthFirstSearch
+
+This function should search through each node in the binary search tree using breadth first search and return an array containing each node's value.
 
 ### Part III
 
 Implement the following function on the `BST.prototype`
 
 #### remove
+
+This function should remove a node from a binary search tree. Your remove function should be able to handle removal of the root node, removal of a node with one child and removal of a node with two children. The function should return the node removed.
