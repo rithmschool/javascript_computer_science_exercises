@@ -1,6 +1,5 @@
 ## JavaScript Computer Science Exercises
 
-- [Big O Exercise](./big_o_exercise)
 - [Recursion Exercise](./recursion_exercise)
 - [Searching Algorithms Exercises](./searching_algorithms_exercise)
 - [Sorting Algorithms Exercises](./sorting_algorithms_exercise)
