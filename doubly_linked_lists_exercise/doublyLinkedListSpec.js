@@ -1,171 +1,101 @@
 var expect = chai.expect
+var doublyLinkedList;
+var node1, node2, node3, node4;
 
-describe("#productOfArray", function(){
-  it("returns the product of all the numbers in an array", function(){
-    expect(productOfArray([1,2,3])).to.equal(6)
-    expect(productOfArray([0,1,2,3])).to.equal(0)
-    expect(productOfArray([1,-2,3])).to.equal(-6)
+beforeEach(function(){
+  doublyLinkedList = new DoublyLinkedList
+  node1 = new Node(15)
+  node2 = new Node(20)
+  node3 = new Node(10)
+  node4 = new Node(12)
+})
+
+describe("#DoublyLinkedList", function(){
+  it("contains a prev and next that are null", function(){
+    expect(doublyLinkedList.prev).to.equal(null)
+    expect(doublyLinkedList.next).to.equal(null)
+    expect(doublyLinkedList.hasOwnProperty('prev')).to.equal(true)
+    expect(doublyLinkedList.hasOwnProperty('next')).to.equal(true)
+  });
+  it("contains a length property that begins at 0", function(){
+    expect(doublyLinkedList.length).to.equal(0)
+    expect(doublyLinkedList.hasOwnProperty('length')).to.equal(true)
   });
 });
 
-describe("#collectStrings", function(){
-  it("returns all the strings in a nested object", function(){
-    var obj = {
-        stuff: "foo",
-        data: {
-            val: {
-                thing: {
-                    info: "bar",
-                    moreInfo: {
-                        evenMoreInfo: {
-                            weMadeIt: "baz"
-                        }
-                    }
-                }
-            }
-        }
-    }
-    expect(collectStrings(obj)).to.deep.equal(["foo", "bar", "baz"])
+describe("#Node", function(){
+  it("contains a value", function(){
+    expect(node1.value).to.equal(15)
+    expect(node1.hasOwnProperty('value')).to.equal(true)
   });
 });
 
-describe("#contains", function(){
-  it("should return true if a value is found in an object", function(){
-    var nestedObject = {
-        data: {
-            info: {
-                stuff: {
-                    thing: {
-                        moreStuff: {
-                            magicNumber: 44
-                        }
-                    }
-                }
-            }
-        }
-    }
-    expect(contains(nestedObject, 44)).to.equal(true) // true)
+describe("#push", function(){
+  it("contains a root that is null", function(){
+    expect(doublyLinkedList.root).to.equal(null)
+    expect(doublyLinkedList.hasOwnProperty('root')).to.equal(true)
   });
 });
 
-describe("#search", function(){
-  it("should find the index of a value in an array", function(){
-    expect(search([1,2,3,4],4)).to.equal(3)
-    expect(search([1,2],1)).to.equal(0)
-    expect(search([1,2,3,4,5,6,7],6)).to.equal(5)
-  });
-  it("should return -1 if the value is not found", function(){
-    expect(search([1,2,3,4]),0).to.equal(-1)
-    expect(search([1,2]),11).to.equal(-1)
+describe("#pop", function(){
+  it("contains a root that is null", function(){
+    expect(doublyLinkedList.root).to.equal(null)
+    expect(doublyLinkedList.hasOwnProperty('root')).to.equal(true)
   });
 });
 
-describe("#binarySearch", function(){
-  it("should find the index of a value in an array", function(){
-    expect(binarySearch([1,2,3,4],4)).to.equal(3)
-    expect(binarySearch([1,2],1)).to.equal(0)
-    expect(binarySearch([1,2,3,4,5,6,7],6)).to.equal(5)
-  });
-  it("should return -1 if the value is not found", function(){
-    expect(binarySearch([1,2,3,4],0)).to.equal(-1)
-    expect(binarySearch([1,2],11)).to.equal(-1)
+describe("#unshift", function(){
+  it("contains a root that is null", function(){
+    expect(doublyLinkedList.root).to.equal(null)
+    expect(doublyLinkedList.hasOwnProperty('root')).to.equal(true)
   });
 });
 
-describe("#stringifyNumbers", function(){
-  it("should not modify an existing object", function(){
-    var obj = {
-      num: 1,
-      test: [],
-      data: {
-        val: 4,
-        info: {
-          isRight: true,
-          random: 66
-        }
-      }
-    }
-    var answer = {
-      num: "1",
-      test: [],
-      data: {
-        val: "4",
-        info: {
-          isRight: true,
-          random: "66"
-        }
-      }
-    }
-    stringifyNumbers(obj)
-    expect(obj.num).to.be.a('number')
-    expect(obj.num).to.equal(1)
+describe("#shift", function(){
+  it("contains a root that is null", function(){
+    expect(doublyLinkedList.root).to.equal(null)
+    expect(doublyLinkedList.hasOwnProperty('root')).to.equal(true)
   });
-  it("should convert all numbers in a nested object to strings", function(){
-    var obj = {
-      num: 1,
-      test: [],
-      data: {
-        val: 4,
-        info: {
-          isRight: true,
-          random: 66
-        }
-      }
-    }
-    var answer = {
-      num: "1",
-      test: [],
-      data: {
-        val: "4",
-        info: {
-          isRight: true,
-          random: "66"
-        }
-      }
-    }
-    expect(stringifyNumbers(obj)).to.deep.equal(answer)
+});
+
+describe("#set", function(){
+  it("contains a root that is null", function(){
+    expect(doublyLinkedList.root).to.equal(null)
+    expect(doublyLinkedList.hasOwnProperty('root')).to.equal(true)
   });
-  it("should convert all numbers in a highly nested object to strings", function(){
-    var obj = {
-      num: 1,
-      test: [],
-      data: {
-        val: 4,
-        info: {
-          isRight: true,
-          random: 66,
-          nested: {
-            inner: {
-              nestedInner: {
-                another: {
-                  num: 10
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    var answer = {
-       num: '1',
-       test: [],
-       data: {
-         val: '4',
-         info: {
-           isRight: true,
-           random: '66',
-           nested: {
-             inner: {
-               nestedInner: {
-                 another: {
-                   num: '10'
-                 }
-               }
-             }
-           }
-         }
-       }
-     }
-    expect(stringifyNumbers(obj)).to.deep.equal(answer)
+});
+
+describe("#_get", function(){
+  it("contains a root that is null", function(){
+    expect(doublyLinkedList.root).to.equal(null)
+    expect(doublyLinkedList.hasOwnProperty('root')).to.equal(true)
+  });
+});
+
+describe("#_insert", function(){
+  it("contains a root that is null", function(){
+    expect(doublyLinkedList.root).to.equal(null)
+    expect(doublyLinkedList.hasOwnProperty('root')).to.equal(true)
+  });
+});
+
+describe("#toString", function(){
+  it("contains a root that is null", function(){
+    expect(doublyLinkedList.root).to.equal(null)
+    expect(doublyLinkedList.hasOwnProperty('root')).to.equal(true)
+  });
+});
+
+describe("#remove", function(){
+  it("contains a root that is null", function(){
+    expect(doublyLinkedList.root).to.equal(null)
+    expect(doublyLinkedList.hasOwnProperty('root')).to.equal(true)
+  });
+});
+
+describe("#reverse", function(){
+  it("contains a root that is null", function(){
+    expect(doublyLinkedList.root).to.equal(null)
+    expect(doublyLinkedList.hasOwnProperty('root')).to.equal(true)
   });
 });

@@ -30,15 +30,15 @@ This function should insert a node in a binary tree. This should be solved using
 
 #### findIteratively
 
-This function should find a node in a binary tree. It should return the node if found, otherwise return `undefined`. This should be solved using iteration.
+This function should find a node in a binary tree. It should return the node if found, otherwise return `undefined`. This should be solved using iteration. The tests for this method assume that insertIteratively has been implemented correctly.
 
 #### findRecursively
 
-This function should find a node in a binary tree. It should return the node if found, otherwise return `undefined`. This should be solved using recursion.
+This function should find a node in a binary tree. It should return the node if found, otherwise return `undefined`. This should be solved using recursion. The tests for this method assume that insertIteratively has been implemented correctly.
 
 #### toArray
 
-This function should convert a binary search tree into an array of nodes from smallest to largest.
+This function should convert a binary search tree into an array of nodes from smallest to largest. The tests for this method assume that insertIteratively has been implemented correctly.
 
 ### Part II
 
