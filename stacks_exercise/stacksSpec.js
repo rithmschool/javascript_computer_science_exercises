@@ -1,47 +1,76 @@
 var expect = chai.expect
-var stack;
+var stack, node;
 
 beforeEach(function(){
   stack = new Stack
+  node = new Node(10)
 })
 
-describe("#stack", function(){
-  it("contains a prev and next that are null", function(){
-    expect(stack.prev).to.equal(null)
-    expect(stack.next).to.equal(null)
-    expect(stack.hasOwnProperty('prev')).to.equal(true)
-    expect(stack.hasOwnProperty('next')).to.equal(true)
+describe("#Stack", function(){
+  it("contains a first and list property", function(){
+    expect(stack.first).to.equal(null)
+    expect(stack.last).to.equal(null)
+    expect(stack.hasOwnProperty('first')).to.equal(true)
+    expect(stack.hasOwnProperty('last')).to.equal(true)
   });
-  it("contains a length property that begins at 0", function(){
-    expect(stack.length).to.equal(0)
-    expect(stack.hasOwnProperty('length')).to.equal(true)
+  it("contains a size property that begins at 0", function(){
+    expect(stack.size).to.equal(0)
+    expect(stack.hasOwnProperty('size')).to.equal(true)
+  });
+});
+
+describe("#Node", function(){
+  it("contains a value and next property", function(){
+    expect(node.value).to.equal(10)
+    expect(node.next).to.equal(null)
+    expect(node.hasOwnProperty('value')).to.equal(true)
+    expect(node.hasOwnProperty('next')).to.equal(true)
   });
 });
 
 describe("#push", function(){
-  it("contains a value", function(){
-    expect(node1.value).to.equal(15)
-    expect(node1.hasOwnProperty('value')).to.equal(true)
+  it("returns the new size of the stack", function(){
+    expect(stack.push(10)).to.equal(1)
+    expect(stack.size).to.equal(1)
+    expect(stack.push(100)).to.equal(1)
+    expect(stack.size).to.equal(2)
+    expect(stack.push(1000)).to.equal(1)
+    expect(stack.size).to.equal(3)
+  });
+  it("places the value at the top of the stack", function(){
+    expect(stack.push(10)).to.equal(1)
+    expect(stack.first).to.equal(10)
+    expect(stack.last).to.equal(10)
+    stack.push(100)
+    expect(stack.first).to.equal(10)
+    expect(stack.last).to.equal(100)
+    stack.push(1000)
+    expect(stack.first).to.equal(10)
+    expect(stack.last).to.equal(100)
+    expect(stack.first).to.equal(10)
+    expect(stack.last).to.equal(1000)
   });
 });
 
 describe("#pop", function(){
-  it("contains a root that is null", function(){
-    expect(stack.root).to.equal(null)
-    expect(stack.hasOwnProperty('root')).to.equal(true)
+  it("returns the value of the node removed", function(){
+    stack.push(10);
+    stack.push(100);
+    stack.push(1000);
+    var removed = stack.pop()
+    expect(removed).to.equal(10)
+    expect(stack.size).to.equal(2)
+    stack.pop()
+    stack.pop()
+    expect(stack.size).to.equal(0)
   });
 });
 
 describe("#peek", function(){
-  it("contains a root that is null", function(){
-    expect(stack.root).to.equal(null)
-    expect(stack.hasOwnProperty('root')).to.equal(true)
-  });
-});
-
-describe("#print", function(){
-  it("contains a root that is null", function(){
-    expect(stack.root).to.equal(null)
-    expect(stack.hasOwnProperty('root')).to.equal(true)
+  it("returns the value at the top of the stack", function(){
+    stack.push(10);
+    stack.push(100);
+    stack.push(1000);
+    expect(stack.peek()).to.equal(1000)
   });
 });

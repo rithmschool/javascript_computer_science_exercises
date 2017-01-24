@@ -6,6 +6,12 @@ For this exercise you must get the tests to pass.
 
 - Write a constructor function for a `Queue`
     - it should have a size property initialized to 0   
+    - it should have a first property initialized to `null`
+    - it should have a last property initialized to `null`   
+- Write a constructor function for a `Node`
+    - it should have a value property which is assigned to a value passed as a parameter to the constructor function
+    - it should have a next property initialized to `null`    
+
 
 Implement the following methods on the `Queue.prototype`
 

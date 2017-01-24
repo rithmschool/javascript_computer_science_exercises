@@ -48,10 +48,6 @@ This internal/helper function should find a node at a specified index in a Doubl
 
 This internal/helper function should insert a node at a specified index in a DoublyLinkedList. It should return the new length of the DoublyLinkedList.
 
-### toString
-
-This function should convert the DoublyLinkedList into a string
-
 ### remove
 
 This function should remove a node at a specified index in a DoublyLinkedList. It should return the removed node.

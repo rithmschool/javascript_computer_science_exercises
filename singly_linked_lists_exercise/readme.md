@@ -48,10 +48,6 @@ This internal/helper function should find a node at a specified index in a Singl
 
 This internal/helper function should insert a node at a specified index in a SinglyLinkedList. It should return the new length of the SinglyLinkedList.
 
-### toString
-
-This function should convert the SinglyLinkedList into a string
-
 ### remove
 
 This function should remove a node at a specified index in a SinglyLinkedList. It should return the removed node.
