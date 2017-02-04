@@ -32,23 +32,21 @@ describe("#push", function(){
   it("returns the new size of the stack", function(){
     expect(stack.push(10)).to.equal(1)
     expect(stack.size).to.equal(1)
-    expect(stack.push(100)).to.equal(1)
+    expect(stack.push(100)).to.equal(2)
     expect(stack.size).to.equal(2)
-    expect(stack.push(1000)).to.equal(1)
+    expect(stack.push(1000)).to.equal(3)
     expect(stack.size).to.equal(3)
   });
   it("places the value at the top of the stack", function(){
     expect(stack.push(10)).to.equal(1)
-    expect(stack.first).to.equal(10)
-    expect(stack.last).to.equal(10)
+    expect(stack.first.value).to.equal(10)
+    expect(stack.last.value).to.equal(10)
     stack.push(100)
-    expect(stack.first).to.equal(10)
-    expect(stack.last).to.equal(100)
+    expect(stack.first.value).to.equal(100)
+    expect(stack.last.value).to.equal(10)
     stack.push(1000)
-    expect(stack.first).to.equal(10)
-    expect(stack.last).to.equal(100)
-    expect(stack.first).to.equal(10)
-    expect(stack.last).to.equal(1000)
+    expect(stack.first.value).to.equal(1000)
+    expect(stack.last.value).to.equal(10)
   });
 });
 
@@ -58,7 +56,7 @@ describe("#pop", function(){
     stack.push(100);
     stack.push(1000);
     var removed = stack.pop()
-    expect(removed).to.equal(10)
+    expect(removed).to.equal(1000)
     expect(stack.size).to.equal(2)
     stack.pop()
     stack.pop()

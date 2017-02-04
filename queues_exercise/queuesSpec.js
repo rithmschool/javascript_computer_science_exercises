@@ -32,23 +32,21 @@ describe("#enqueue", function(){
   it("returns the new size of the queue", function(){
     expect(queue.enqueue(10)).to.equal(1)
     expect(queue.size).to.equal(1)
-    expect(queue.enqueue(100)).to.equal(1)
+    expect(queue.enqueue(100)).to.equal(2)
     expect(queue.size).to.equal(2)
-    expect(queue.enqueue(1000)).to.equal(1)
+    expect(queue.enqueue(1000)).to.equal(3)
     expect(queue.size).to.equal(3)
   });
   it("places the value at the end of the queue", function(){
     expect(queue.enqueue(10)).to.equal(1)
-    expect(queue.first).to.equal(10)
-    expect(queue.last).to.equal(10)
+    expect(queue.first.value).to.equal(10)
+    expect(queue.last.value).to.equal(10)
     queue.enqueue(100)
-    expect(queue.first).to.equal(10)
-    expect(queue.last).to.equal(100)
+    expect(queue.first.value).to.equal(10)
+    expect(queue.last.value).to.equal(100)
     queue.enqueue(1000)
-    expect(queue.first).to.equal(10)
-    expect(queue.last).to.equal(100)
-    expect(queue.first).to.equal(10)
-    expect(queue.last).to.equal(1000)
+    expect(queue.first.value).to.equal(10)
+    expect(queue.last.value).to.equal(1000)
   });
 });
 
