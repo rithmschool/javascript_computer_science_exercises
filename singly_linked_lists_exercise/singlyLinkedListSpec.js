@@ -8,7 +8,7 @@ beforeEach(function(){
 })
 
 describe("#singlyLinkedList", function(){
-  it("contains a prev and next that are null", function(){
+  it("contains a head that is null", function(){
     expect(singlyLinkedList.head).to.equal(null)
     expect(singlyLinkedList.tail).to.equal(null)
     expect(singlyLinkedList.hasOwnProperty('head')).to.equal(true)
@@ -23,9 +23,8 @@ describe("#singlyLinkedList", function(){
 describe("#Node", function(){
   it("contains a value", function(){
     expect(node.val).to.equal(15)
-    expect(node.hasOwnProperty('value')).to.equal(true)
+    expect(node.hasOwnProperty('val')).to.equal(true)
     expect(node.hasOwnProperty('next')).to.equal(true)
-    expect(node.hasOwnProperty('prev')).to.equal(true)
   });
 });
 
@@ -89,8 +88,12 @@ describe("#shift", function(){
     expect(singlyLinkedList.length).to.equal(4)
     expect(singlyLinkedList.shift()).to.equal(5)
     expect(singlyLinkedList.length).to.equal(3)
-    expect(singlyLinkedList.shift()).to.equal(5)
+    expect(singlyLinkedList.shift()).to.equal(10)
     expect(singlyLinkedList.length).to.equal(2)
+    expect(singlyLinkedList.shift()).to.equal(15)
+    expect(singlyLinkedList.length).to.equal(1)
+    expect(singlyLinkedList.shift()).to.equal(20)
+    expect(singlyLinkedList.length).to.equal(0)
   });
   it("returns undefined if there are no nodes to remove", function(){
     expect(singlyLinkedList.shift()).to.equal(undefined)
@@ -110,7 +113,7 @@ describe("#set", function(){
     expect(singlyLinkedList.head.val).to.equal(10)
     singlyLinkedList.set(2,100)
     expect(singlyLinkedList.length).to.equal(4)
-    expect(singlyLinkedList.head.next.nextval).to.equal(100)
+    expect(singlyLinkedList.head.next.next.val).to.equal(100)
   });
 });
 
@@ -121,7 +124,7 @@ describe("#_get", function(){
     expect(singlyLinkedList.get(1)).to.equal(10)
     expect(singlyLinkedList.get(2)).to.equal(15)
     expect(singlyLinkedList.get(3)).to.equal(20)
-    expect(singlyLinkedList.get(4)).to.equal(undefined)
+    expect(singlyLinkedList.get(4)).to.equal(null)
   });
 });
 

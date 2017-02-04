@@ -3,16 +3,16 @@ var doublyLinkedList;
 var node;
 
 beforeEach(function(){
-  doublyLinkedList = new doublyLinkedList
+  doublyLinkedList = new DoublyLinkedList
   node = new Node(15)
 })
 
 describe("#doublyLinkedList", function(){
-  it("contains a prev and next that are null", function(){
-    expect(doublyLinkedList.prev).to.equal(null)
-    expect(doublyLinkedList.next).to.equal(null)
-    expect(doublyLinkedList.hasOwnProperty('prev')).to.equal(true)
-    expect(doublyLinkedList.hasOwnProperty('next')).to.equal(true)
+  it("contains a head and tail that are null", function(){
+    expect(doublyLinkedList.head).to.equal(null)
+    expect(doublyLinkedList.tail).to.equal(null)
+    expect(doublyLinkedList.hasOwnProperty('head')).to.equal(true)
+    expect(doublyLinkedList.hasOwnProperty('tail')).to.equal(true)
   });
   it("contains a length property that begins at 0", function(){
     expect(doublyLinkedList.length).to.equal(0)
@@ -21,9 +21,9 @@ describe("#doublyLinkedList", function(){
 });
 
 describe("#Node", function(){
-  it("contains a value", function(){
+  it("contains a val", function(){
     expect(node.val).to.equal(15)
-    expect(node.hasOwnProperty('value')).to.equal(true)
+    expect(node.hasOwnProperty('val')).to.equal(true)
     expect(node.hasOwnProperty('next')).to.equal(true)
     expect(node.hasOwnProperty('prev')).to.equal(true)
   });
@@ -89,8 +89,12 @@ describe("#shift", function(){
     expect(doublyLinkedList.length).to.equal(4)
     expect(doublyLinkedList.shift()).to.equal(5)
     expect(doublyLinkedList.length).to.equal(3)
-    expect(doublyLinkedList.shift()).to.equal(5)
+    expect(doublyLinkedList.shift()).to.equal(10)
     expect(doublyLinkedList.length).to.equal(2)
+    expect(doublyLinkedList.shift()).to.equal(15)
+    expect(doublyLinkedList.length).to.equal(1)
+    expect(doublyLinkedList.shift()).to.equal(20)
+    expect(doublyLinkedList.length).to.equal(0)
   });
   it("returns undefined if there are no nodes to remove", function(){
     expect(doublyLinkedList.shift()).to.equal(undefined)
@@ -99,7 +103,7 @@ describe("#shift", function(){
 });
 
 describe("#set", function(){
-  it("finds a node and replaces its value or returns undefined if the node is not found", function(){
+  it("finds a node and replaces its val or returns undefined if the node is not found", function(){
     doublyLinkedList.push(5).push(10).push(15).push(20)
     expect(doublyLinkedList.length).to.equal(4)
     doublyLinkedList.set(0,10)
@@ -110,18 +114,18 @@ describe("#set", function(){
     expect(doublyLinkedList.head.val).to.equal(10)
     doublyLinkedList.set(2,100)
     expect(doublyLinkedList.length).to.equal(4)
-    expect(doublyLinkedList.head.next.nextval).to.equal(100)
+    expect(doublyLinkedList.head.next.next.val).to.equal(100)
   });
 });
 
 describe("#_get", function(){
-  it("finds a node and returns its value ", function(){
+  it("finds a node and returns its val ", function(){
     doublyLinkedList.push(5).push(10).push(15).push(20)
     expect(doublyLinkedList.get(0)).to.equal(5)
     expect(doublyLinkedList.get(1)).to.equal(10)
     expect(doublyLinkedList.get(2)).to.equal(15)
     expect(doublyLinkedList.get(3)).to.equal(20)
-    expect(doublyLinkedList.get(4)).to.equal(undefined)
+    expect(doublyLinkedList.get(4)).to.equal(null)
   });
 });
 
