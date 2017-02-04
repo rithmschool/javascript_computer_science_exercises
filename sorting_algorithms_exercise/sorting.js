@@ -1,49 +1,52 @@
-function bubbleSort(arr) {
-  var len = arr.length;
-  var lastSwap;
-  var temp
-  while (len != 0) {
-    lastSwap = 0;
-    for (var i = 1; i < len; i++) {
-      if (arr[i - 1] > arr[i]) {
-        // Swap the two elements
-        temp = arr[i-1];
-        arr[i-1] = arr[i];
-        arr[i] = temp;
-        lastSwap = i;
+function swap(arr, idx1, idx2) {
+  [arr[idx1],arr[idx2]] = [arr[idx2],arr[idx1]]
+}
+
+function bubbleSort(arr){
+
+  for (let i = arr.length; i > 0; i--) {
+    for (let j = 0; j < i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        swap(arr, j, j + 1);
       }
     }
-    len = lastSwap;
   }
+  return arr;
 }
 
-function selectionSort(arr){
+function selectionSort(arr) {
 
-}
-
-function insertionSort(arr){
-
-}
-
-function mergeSort(arr) {
-  if (arr.length <= 1) {
-    return arr;
+  for (let i = 0; i < arr.length; i++) {
+    let lowest = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[lowest]) {
+        lowest = j;
+      }
+    }
+    if (i !== lowest) swap(arr, i, lowest);
   }
-  var mid = Math.floor(arr.length / 2);
-  var l = mergeSort(arr.slice(0, mid));
-  var r = mergeSort(arr.slice(mid));
 
-  return merge(l, r);
+  return arr;
+}
 
+
+function insertionSort(arr) {
+
+  for (let i = 0; i < arr.length; i++) {
+    let currentValue = arr[i];
+    for (var j = i - 1; j > -1 && arr[j] > currentValue; j--) {
+      arr[j+1] = arr[j];
+    }
+    arr[j+1] = currentValue;
+  }
+
+  return arr;
 }
 
 function merge(arr1, arr2) {
-
   var results = [];
   var i = 0, j = 0;
-
   while (i < arr1.length || j < arr2.length) {
-
     if (j === arr2.length || arr1[i] < arr2[j]) {
       results.push(arr1[i]);
       i++;
@@ -52,16 +55,27 @@ function merge(arr1, arr2) {
       j++;
     }
   }
-
   return results;
 }
 
-function quickSort(arr, start=0, end=arr.length-1) {
-  if (start < end) {
-    var pivotInd = partition(arr, start, end);
-    quickSort(arr, start, pivotInd - 1);
-    quickSort(arr, pivotInd + 1, end);
+
+function mergeSort(arr) {
+  if (arr.length <= 1) return arr;
+  var mid = Math.floor(arr.length / 2);
+  var left = mergeSort(arr.slice(0, mid));
+  var right = mergeSort(arr.slice(mid));
+
+  return merge(left, right);
+}
+
+
+function quickSort(arr, left=0, right=arr.length - 1){
+  if(left < right){
+   let partitionIndex = partition(arr, left, right);
+   quickSort(arr, left, partitionIndex - 1);
+   quickSort(arr, partitionIndex + 1, right);
   }
+  return arr;
 }
 
 function partition(arr, start, end) {
@@ -71,19 +85,13 @@ function partition(arr, start, end) {
 
   for (var i = start; i < end; i++) {
     if (arr[i] <= pivot) {
-      swapVals(arr, i, swapPoint);
+      swap(arr, i, swapPoint);
       swapPoint++;
     }
   }
 
   // Swap the pivot from the end to the swapPoint
-  swapVals(arr, swapPoint, end);
+  swap(arr, swapPoint, end);
   return swapPoint;
-}
-
-function swapVals(arr, i, j) {
-  var temp = arr[i];
-  arr[i] = arr[j];
-  arr[j] = temp;
 }
 
