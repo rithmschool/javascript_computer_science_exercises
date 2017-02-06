@@ -31,15 +31,17 @@ Implement the following methods on the `Graph.prototype`
 
 Implement the following methods on the `Graph.prototype`
 
-**depthFirstSearch** - this function should
+**depthFirstSearch** - this function should return an array of nodes visited using DFS
 
-**breadthFirstSearch** - this function should
+**breadthFirstSearch** - this function should return an array of nodes visited using BFS
 
 #### Part III
 
-Implement the following methods on the `Graph.prototype`
+Create a constructor function for a `WeightedGraph`. It should inherit from the `Graph` constructor and have all the same methods except for adding an edge. Since weights will now be added with edges, the adjacency list should not only store the nodes which are connected to it but also the corresponding weight of the edge.
 
-**djikstra** - this function should
+Implement the following methods on the `WeightedGraph.prototype`
+
+**djikstra** - this function should return an array with two values, the first being the total distance and the second an array of nodes which create the shortest path.
 
 **aStar** - this function should
 
