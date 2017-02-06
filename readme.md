@@ -9,3 +9,4 @@
 - [Queues Exercises](./queues_exercise)
 - [Binary Search Trees Exercises](./binary_search_trees_exercise)
 - [Hash Tables Exercises](./hash_tables_exercise)
+- [Graphs Exercises](./graphs_exercise)
