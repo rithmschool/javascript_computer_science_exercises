@@ -25,7 +25,7 @@ This function removes the value at the beginning of the queue. This should be an
 
 ### peek
 
-This function returns the first values in the queue.
+This function returns the first value in the queue.
 
 ### print
 
