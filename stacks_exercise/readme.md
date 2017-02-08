@@ -18,7 +18,7 @@ This function removes the value at the beginning of the stack. This should be an
 
 ### peek
 
-This function returns the first values in the stack.
+This function returns the first value in the stack.
 
 ### print
 
