@@ -1,10 +1,10 @@
 function Graph(){
-    this.verticies = [];
+    this.vertices = [];
     this.adjacencyList = {};
 }
 
 Graph.prototype.addVertex = function(vertex) {
-  this.verticies.push(vertex);
+  this.vertices.push(vertex);
 
   this.adjacencyList[vertex] = [];
 };
@@ -15,8 +15,8 @@ Graph.prototype.addEdge = function(vertex1, vertex2) {
 };
 
 Graph.prototype.removeVertex = function(vertex) {
-  var index = this.verticies.indexOf(vertex);
-  if(index > -1) this.verticies.splice(index, 1);
+  var index = this.vertices.indexOf(vertex);
+  if(index > -1) this.vertices.splice(index, 1);
 
   while(this.adjacencyList[vertex].length) {
     var adjacentVertex = this.adjacencyList[vertex].pop();
