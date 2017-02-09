@@ -5,7 +5,6 @@ function Graph(){
 
 Graph.prototype.addVertex = function(vertex) {
   this.vertices.push(vertex);
-
   this.adjacencyList[vertex] = [];
 };
 
