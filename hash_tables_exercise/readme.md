@@ -2,7 +2,7 @@
 
 ## Getting started
 
-For this exercise your goal is to make the tests pass.pass. 
+For this exercise your goal is to make the tests pass. 
 
 ### Part I
 
@@ -90,7 +90,6 @@ This function return a value in the hashTable based on a specified key. It shoul
 #### setLinearProbing
 
 This function should set a value in the hashTable based on a specified key. It should handle collisions using linear probing.
-
 
 #### getLinearProbing
 
