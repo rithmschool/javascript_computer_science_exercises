@@ -6,14 +6,14 @@ beforeEach(function(){
 })
 
 describe("#addVertex", function(){
-  it("should add a vertex to the verticies array", function(){
+  it("should add a vertex to the vertices array", function(){
     graph.addVertex('A')
     graph.addVertex('B')
     graph.addVertex('C')
-    expect(graph.verticies[0]).to.equal('A')
-    expect(graph.verticies[1]).to.equal('B')
-    expect(graph.verticies[2]).to.equal('C')
-    expect(graph.verticies.length).to.equal(3)
+    expect(graph.vertices[0]).to.equal('A')
+    expect(graph.vertices[1]).to.equal('B')
+    expect(graph.vertices[2]).to.equal('C')
+    expect(graph.vertices.length).to.equal(3)
   });
   it("should add a key in the adjacency list with a value as an empty array", function(){
     graph.addVertex('A')
@@ -35,7 +35,7 @@ describe("#addEdge", function(){
     graph.addEdge('A','C')
     graph.addEdge('B','D')
     graph.addEdge('C','D')
-    expect(graph.verticies.length).to.equal(4)
+    expect(graph.vertices.length).to.equal(4)
     expect(graph.adjacencyList['A']).to.contain('B','C')
     expect(graph.adjacencyList['B']).to.contain('A','D')
     expect(graph.adjacencyList['C']).to.contain('A','D')
@@ -44,7 +44,7 @@ describe("#addEdge", function(){
 });
 
 describe("#removeEdge", function(){
-  it("should remove the verticies from the adjacency list", function(){
+  it("should remove the vertices from the adjacency list", function(){
     graph.addVertex('A')
     graph.addVertex('B')
     graph.addVertex('C')
@@ -77,7 +77,7 @@ describe("#removeVertex", function(){
 
     graph.removeVertex('C')
     graph.removeVertex('B')
-    expect(graph.verticies.length).to.equal(2)
+    expect(graph.vertices.length).to.equal(2)
     expect(graph.adjacencyList['A']).to.be.empty
     expect(graph.adjacencyList['D']).to.be.empty
   });
