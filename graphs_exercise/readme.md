@@ -8,7 +8,7 @@ Given the following constructor function:
 
 ```js
 function Graph(){
-    this.verticies = [];
+    this.vertices = [];
     this.adjacencyList = {};
 }
 ```
@@ -23,7 +23,7 @@ Implement the following methods on the `Graph.prototype`
 
 **removeVertex** - this function should remove the node in the array of nodes and also remove all edges that the removed node previously contained.
 
-**size** - this function should return the number of verticies
+**size** - this function should return the number of vertices
 
 **numberOfEdges** - this function should return the number of edges the graph contains
 
