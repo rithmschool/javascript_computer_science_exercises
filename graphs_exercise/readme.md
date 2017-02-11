@@ -41,4 +41,4 @@ Create a constructor function for a `WeightedGraph`. It should inherit from the 
 
 Implement the following method on the `WeightedGraph.prototype`
 
-**dijkstra** - this function should return an array with two values, the first being the total distance and the second an array of nodes which create the shortest path.
+**Dijkstra** - this function should return an array with two values, the first being the total distance and the second an array of nodes which create the shortest path.
