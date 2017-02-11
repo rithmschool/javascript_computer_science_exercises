@@ -18,7 +18,7 @@ function BinarySearchTree(){
 }
 ```
 
-Implement the following functions on the `BST.prototype`
+Implement the following functions on the `BinarySearchTree.prototype`
 
 #### insertIteratively
 
@@ -42,7 +42,7 @@ This function should convert a binary search tree into an array of nodes from sm
 
 ### Part II
 
-Implement the following functions on the `BST.prototype`
+Implement the following functions on the `BinarySearchTree.prototype`
 
 #### DFSPreOrder
 
@@ -62,7 +62,7 @@ This function should search through each node in the binary search tree using br
 
 ### Part III
 
-Implement the following function on the `BST.prototype`
+Implement the following function on the `BinarySearchTree.prototype`
 
 #### remove
 
