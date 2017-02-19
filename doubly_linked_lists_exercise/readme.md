@@ -8,7 +8,8 @@ Given the following constructor functions:
 
 ```js
 function Node(val){
-    this.val = val
+    this.val = val;
+    this.next = null;
 }
 
 function DoublyLinkedList(){
