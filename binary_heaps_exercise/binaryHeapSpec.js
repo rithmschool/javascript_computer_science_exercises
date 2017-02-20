@@ -2,7 +2,7 @@ var expect = chai.expect
 var binaryHeap
 
 beforeEach(function(){
-  binaryHeap = new BinaryHeap
+  binaryHeap = new MaxBinaryHeap
 })
 
 describe("#insert", function(){
