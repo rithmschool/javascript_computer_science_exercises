@@ -4,7 +4,7 @@ For this exercise you must get the tests to pass.
 
 ### Part I
 
-Given the following constructor functions
+Given the following constructor function
 
 ```js
 function MaxBinaryHeap(val){
