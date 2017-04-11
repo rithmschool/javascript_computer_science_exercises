@@ -53,6 +53,7 @@ describe("#pop", function(){
     expect(singlyLinkedList.length).to.equal(4)
     expect(singlyLinkedList.pop()).to.equal(20)
     expect(singlyLinkedList.length).to.equal(3)
+    expect(singlyLinkedList.head.next.next.val).to.equal(15)
   });
   it("returns undefined if there are no nodes to remove", function(){
     expect(singlyLinkedList.pop()).to.equal(undefined)
