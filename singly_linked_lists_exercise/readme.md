@@ -39,7 +39,7 @@ This function should remove a node at the beginning of the SinglyLinkedList. It 
 
 ### set
 
-This function should update the value of a node at a given index of the SinglyLinkedList. It should return the updated node, or undefined if an invalid index is passed in.
+This function should update the value of a node at a given index of the SinglyLinkedList. It should return true if the node is updated successfully, or false if an invalid index is passed in.
 
 ### _get
 
