@@ -13,7 +13,7 @@ Simplify the following big O expressions as much as possible:
 7. `O(n * log(n))`
 8. `O(2^n)`
 9. `O(1)`
-10. `O(n^(n^2 + n * log(n))`
+10. `O(n^2 + n * log(n))`
 
 ### Part 2
 
