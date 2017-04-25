@@ -4,16 +4,16 @@
 
 Simplify the following big O expressions as much as possible:
 
-1. `O(n + 10)`
-2. `O(100 * n)`
-3. `O(25)`
-4. `O(n^2 + n^3)`
-5. `O(n + n + n + n)`
-6. `O(1000 * log(n) + n)`
-7. `O(1000 * n * log(n) + n)`
-8. `O(2^n + n^2)`
-9. `O(5 + 3 + 1)`
-10. `O(n + n^(1/2) + n^2 + n * log(n)^10)`
+1. `O(n + 10)`  **Answer: O(n)**
+2. `O(100 * n)` **Answer: O(n)**
+3. `O(25)` **Answer: O(1)**
+4. `O(n^2 + n^3)` **Answer: O(n^3)**
+5. `O(n + n + n + n)` **Answer: O(n)**
+6. `O(1000 * log(n) + n)` **Answer: O(log(n))**
+7. `O(1000 * n * log(n) + n)` __Answer: O(n*log(n))__
+8. `O(2^n + n^2)` **Answer: O(2^n)**
+9. `O(5 + 3 + 1)` **Answer: O(1)**
+10. `O(n + n^(1/2) + n^2 + n * log(n)^10)` **Answer O(n^2)**
 
 ### Part 2
 
@@ -28,7 +28,10 @@ function logUpTo(n) {
         console.log(i);
     }
 }
+```
+__Answer: Time: O(n), Space: O(1)__
 
+```js
 // 2. 
 
 function logAtMost10(n) {
@@ -36,7 +39,10 @@ function logAtMost10(n) {
         console.log(i);
     }
 }
+```
+__Answer: Time: O(1), Space: O(1)__
 
+```js
 // 3. 
 
 function logAtLeast10(n) {
@@ -44,7 +50,10 @@ function logAtLeast10(n) {
         console.log(i);
     }
 }
+```
+__Answer: Time: O(n), Space: O(1)__
 
+```js
 // 4.
 
 function onlyElementsAtEvenIndex(array) {
@@ -56,7 +65,10 @@ function onlyElementsAtEvenIndex(array) {
     }
     return newArray;
 }
+```
+__Answer: Time: O(n), Space: O(n)__
 
+```js
 // 5. 
 
 function subtotals(array) {
@@ -71,3 +83,4 @@ function subtotals(array) {
     return subtotalArray;
 }
 ```
+__Answer: Time: O(n^2), Space: O(n)__
