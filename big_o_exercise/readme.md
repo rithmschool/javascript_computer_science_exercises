@@ -9,7 +9,7 @@ Simplify the following big O expressions as much as possible:
 3. `O(25)` **Answer: O(1)**
 4. `O(n^2 + n^3)` **Answer: O(n^3)**
 5. `O(n + n + n + n)` **Answer: O(n)**
-6. `O(1000 * log(n) + n)` **Answer: O(log(n))**
+6. `O(1000 * log(n) + n)` **Answer: O(n)**
 7. `O(1000 * n * log(n) + n)` __Answer: O(n*log(n))__
 8. `O(2^n + n^2)` **Answer: O(2^n)**
 9. `O(5 + 3 + 1)` **Answer: O(1)**
