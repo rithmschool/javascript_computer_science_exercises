@@ -70,5 +70,6 @@ describe("#peek", function(){
     stack.push(100);
     stack.push(1000);
     expect(stack.peek()).to.equal(1000)
+    stack.print();
   });
 });
