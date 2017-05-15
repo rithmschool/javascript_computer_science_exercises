@@ -122,17 +122,6 @@ SinglyLinkedList.prototype.remove = function(index){
 }
 
 SinglyLinkedList.prototype.reverse = function(){
-	//case1: 1 node
-	if(this.length === 1) return this;
-	//case2: two nodes
-	if(this.length === 2){
-		this.tail.next = this.head;
-		this.head.next = null;
-		this.head = this.tail
-		this.tail = this.head.next;
-		return this;
-	}
-	//case3: 3 or more
 	var curr = this.head;
 	var prev = null;
 	var next = this.head.next;
