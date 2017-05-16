@@ -9,6 +9,7 @@ Given the following constructor functions:
 ```js
 function Node(val){
     this.val = val;
+    this.prev = null;
     this.next = null;
 }
 
@@ -23,7 +24,7 @@ Implement the following on the `DoublyLinkedList.prototype`
 
 ### push
 
-This function should add a node to the end of the DoublyLinkedList. It should return the new length of the list.
+This function should add a node to the end of the DoublyLinkedList. It should return the new the list so that the method can be chained.
 
 ### pop
 
@@ -39,7 +40,7 @@ This function should remove a node at the beginning of the DoublyLinkedList. It 
 
 ### set
 
-This function should insert a node at the beginning of the DoublyLinkedList. It should return the node removed.
+This function should find a node and replace its val or return undefined if the node is not found.
 
 ### _get
 
