@@ -94,7 +94,54 @@ BinarySearchTree.prototype.toArray = function(){
 	return arr;
 }
 
+BinarySearchTree.prototype.DFSPreOrder = function(){
+	var arr = [];
 
+	function helper(node){
+		if(node !== null){
+			arr.push(node.value);
+			helper(node.left);
+			helper(node.right);
+		}
+	}
+	helper(this.root);
+	return arr;
+}
+
+BinarySearchTree.prototype.DFSInOrder = BinarySearchTree.prototype.toArray
+
+
+BinarySearchTree.prototype.DFSPostOrder = function(){
+	var arr = [];
+
+	function helper(node){
+		if(node !== null){
+			helper(node.left);
+			helper(node.right);
+			arr.push(node.value);
+		}
+	}
+	helper(this.root);
+	return arr;
+}
+
+BinarySearchTree.prototype.breadthFirstSearch = function(){
+	var queue = [];
+	var array = [];
+	var curr = this.root;
+	queue.push(curr);
+	while(queue.length){
+		curr = queue.shift();
+		array.push(curr.value);
+		if(curr.left !== null){
+			queue.push(curr.left)
+		}
+		if(curr.right !== null){
+			queue.push(curr.right)
+		}
+	}
+	return array;
+}
 
 
 
