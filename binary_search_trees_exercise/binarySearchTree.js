@@ -144,7 +144,70 @@ BinarySearchTree.prototype.breadthFirstSearch = function(){
 }
 
 
+BinarySearchTree.prototype.remove = function(value){
+	var prev = null;
+	var curr = this.root
+	var right = false;
+	while(curr !== null){
+		//found
+		if(value === curr.value){
+			//case1: no children
+			if(curr.right === null && curr.left === null){
+				if(right){
+					prev.right = null;
+				} else {
+					prev.left = null;
+				}
+				return;
+			//case2: 1 child
+			} else if(curr.right === null){
+				if(right){
+					prev.right = curr.left;
+				} else {
+					prev.left = curr.left;
+				}
+				return;
+			} else if(curr.left === null){
+				if(right){
+					prev.right = curr.right;
+				} else {
+					prev.left = curr.right;
+				}
+				return;
+			//case3: 2 children, left most right.
+			} else {
+				var replprev = null;
+				var replcurr = curr.right;
+				//find the right most left
+				while(replcurr.left !== null){
+					replprev = replcurr;
+					replcurr = replcurr.left;
+				}
+				if(replprev !== null){
+					replprev.left = null;
+				}
+				if(right){
+					prev.right = replcurr;
+				} else {
+					prev.left = replcurr;
+				}
+				replcurr.left = curr.left;
+				replcurr.right = curr.right;
+				return;
+			}
+		} else if(value > curr.value){
+			prev = curr;
+			curr = curr.right
+			right = true;
+		} else {
+			prev = curr;
+			curr = curr.left
+			right = false;
+		}
 
+	}
+	return;
+}
 
 
 
