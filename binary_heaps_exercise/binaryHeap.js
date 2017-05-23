@@ -25,6 +25,7 @@ MaxBinaryHeap.prototype.remove = function(){
 	// this.values.shift()
 	// this.values = maxHeapify(this.values)
 	this.values.shift()
+	this.values.unshift(this.values.pop())
 	var index = 0
 	var child1 = undefined;
 	var child2 = undefined;
