@@ -24,9 +24,9 @@ MaxBinaryHeap.prototype.insert = function(value){
 MaxBinaryHeap.prototype.remove = function(){
 	// this.values.shift()
 	// this.values = maxHeapify(this.values)
-	this.values.shift()
-	this.values.unshift(this.values.pop())
-	var index = 0
+	[this.values[0],this.values[this.values.length-1]] = [this.values[this.values.length-1],this.values[0]];
+	this.values.pop();
+	var index = 0;
 	var child1 = undefined;
 	var child2 = undefined;
 	while(this.values[index] !== undefined){
@@ -54,7 +54,6 @@ MaxBinaryHeap.prototype.remove = function(){
 			}
 		}
 	}
-	console.log(this.values)
 }
 
 function maxHeapify(arr){
