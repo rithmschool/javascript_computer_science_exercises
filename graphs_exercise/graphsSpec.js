@@ -56,7 +56,7 @@ describe("#removeEdge", function(){
 
     graph.removeEdge('B','A')
     graph.removeEdge('C','D')
-    expect(graph.verticies.length).to.equal(4)
+    expect(graph.vertices.length).to.equal(4)
     expect(graph.adjacencyList['A']).to.contain('C')
     expect(graph.adjacencyList['B']).to.contain('D')
     expect(graph.adjacencyList['C']).to.contain('A')
@@ -74,9 +74,12 @@ describe("#removeVertex", function(){
     graph.addEdge('A','C')
     graph.addEdge('B','D')
     graph.addEdge('C','D')
-
+    console.log(graph.vertices)
+    console.log(graph.adjacencyList)
     graph.removeVertex('C')
+    console.log(graph.adjacencyList)
     graph.removeVertex('B')
+    console.log(graph.vertices)
     expect(graph.vertices.length).to.equal(2)
     expect(graph.adjacencyList['A']).to.be.empty
     expect(graph.adjacencyList['D']).to.be.empty
