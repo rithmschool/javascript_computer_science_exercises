@@ -74,12 +74,8 @@ describe("#removeVertex", function(){
     graph.addEdge('A','C')
     graph.addEdge('B','D')
     graph.addEdge('C','D')
-    console.log(graph.vertices)
-    console.log(graph.adjacencyList)
     graph.removeVertex('C')
-    console.log(graph.adjacencyList)
     graph.removeVertex('B')
-    console.log(graph.vertices)
     expect(graph.vertices.length).to.equal(2)
     expect(graph.adjacencyList['A']).to.be.empty
     expect(graph.adjacencyList['D']).to.be.empty
@@ -163,6 +159,27 @@ describe("#breadthFirstSearch", function(){
     expect(graph.breadthFirstSearch('S')).to.deep.equal(["S", "P", "U", "X", "Q", "V", "Y", "R", "W", "T"])
   });
 });
+
+
+describe("#insertPQ", function(){
+  it("should insert a node at the correct location", function(){
+    var q = [];
+    insertPQ(q,{'from': 'i', 'to': 'b', 'weight': 2});
+    expect(q).to.deep.equal([{'from': 'i', 'to': 'b', 'weight': 2 }])
+    insertPQ(q,{'from': 'i', 'to': 'a', 'weight': 1})
+    expect(q).to.deep.equal([{'from': 'i', 'to': 'a', 'weight': 1},{'from': 'i', 'to': 'b', 'weight': 2 }])
+    insertPQ(q,{'from': 'i', 'to': 'd', 'weight': 4})
+    expect(q).to.deep.equal([{'from': 'i', 'to': 'a', 'weight': 1},{'from': 'i', 'to': 'b', 'weight': 2 },{'from': 'i', 'to': 'd', 'weight': 4}])
+    insertPQ(q,{'from': 'i', 'to': 'z', 'weight': 0})
+    expect(q).to.deep.equal([{'from': 'i', 'to': 'z', 'weight': 0},{'from': 'i', 'to': 'a', 'weight': 1},{'from': 'i', 'to': 'b', 'weight': 2 },{'from': 'i', 'to': 'd', 'weight': 4}])
+    insertPQ(q,{'from': 'i', 'to': 'c', 'weight': 3})
+    expect(q).to.deep.equal([{'from': 'i', 'to': 'z', 'weight': 0},{'from': 'i', 'to': 'a', 'weight': 1},{'from': 'i', 'to': 'b', 'weight': 2 },{'from': 'i', 'to': 'c', 'weight': 3},{'from': 'i', 'to': 'd', 'weight': 4}])
+    insertPQ(q,{'from': 'i', 'to': 'e', 'weight': 5})
+    expect(q).to.deep.equal([{'from': 'i', 'to': 'z', 'weight': 0},{'from': 'i', 'to': 'a', 'weight': 1},{'from': 'i', 'to': 'b', 'weight': 2 },{'from': 'i', 'to': 'c', 'weight': 3},{'from': 'i', 'to': 'd', 'weight': 4},{'from': 'i', 'to': 'e', 'weight': 5}])
+  });
+})
+
+
 
 describe("#dijkstra", function(){
   it("should return an array of the total distance and the shortest path", function(){
