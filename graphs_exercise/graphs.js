@@ -161,7 +161,8 @@ WeightedGraph.prototype.Dijkstra = function(a,b){
     }
   }
   path = printPath(a, b, from, dist);
-
+  console.log(from)
+  console.log(dist)
   return [dist[b], path];
 }
 
@@ -187,7 +188,7 @@ function insertPQ(arr, node){
     return;
   }
   for(var i = 0; i < arr.length; i++){
-    if(node.weight < arr[i].weight){
+    if(node.weight <= arr[i].weight){
       arr.splice(i,0,node);
       return;
     }
