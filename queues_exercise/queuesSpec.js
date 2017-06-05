@@ -70,5 +70,6 @@ describe("#peek", function(){
     queue.enqueue(100);
     queue.enqueue(1000);
     expect(queue.peek()).to.equal(10)
+    queue.print();
   });
 });
