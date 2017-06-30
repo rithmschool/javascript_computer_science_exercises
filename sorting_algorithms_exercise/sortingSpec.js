@@ -84,8 +84,8 @@ describe("#quickSort", function(){
       pivot(unsortedNegative);
       expect(unsorted.slice(0,2)).to.include.members(sorted.slice(0,2));
       expect(unsorted.slice(3)).to.include.members(sorted.slice(3));
-      expect(unsortedNegative.slice(0,4)).to.include.members(sorted.slice(0,4));
-      expect(unsortedNegative.slice(5)).to.include.members(sorted.slice(5));
+      expect(unsortedNegative.slice(0,4)).to.include.members(sortedNegative.slice(0,4));
+      expect(unsortedNegative.slice(5)).to.include.members(sortedNegative.slice(5));
     });
   });
 
