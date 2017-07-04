@@ -32,7 +32,7 @@ This function should remove a node at the end of the DoublyLinkedList. It should
 
 ### unshift
 
-This function should add a node to the beginning of the DoublyLinkedList. It should return the new length of the list.
+This function should add a node to the beginning of the DoublyLinkedList. It should return the list so that the method can be chained.
 
 ### shift
 
