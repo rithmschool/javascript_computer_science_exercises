@@ -23,7 +23,7 @@ Implement the following on the `SinglyLinkedList.prototype`
 
 ### push
 
-This function should add a node to the end of the SinglyLinkedList. It should return the new length of the list.
+This function should add a node to the end of the SinglyLinkedList. It should return the list so that the method can be chained.
 
 ### pop
 
@@ -31,7 +31,7 @@ This function should remove a node at the end of the SinglyLinkedList. It should
 
 ### unshift
 
-This function should add a node to the beginning of the SinglyLinkedList. It should return the new length of the list.
+This function should add a node to the beginning of the SinglyLinkedList. It should return the list so that the method can be chained.
 
 ### shift
 
