@@ -56,7 +56,7 @@ describe("#removeEdge", function(){
 
     graph.removeEdge('B','A')
     graph.removeEdge('C','D')
-    expect(graph.verticies.length).to.equal(4)
+    expect(graph.vertices.length).to.equal(4)
     expect(graph.adjacencyList['A']).to.contain('C')
     expect(graph.adjacencyList['B']).to.contain('D')
     expect(graph.adjacencyList['C']).to.contain('A')
