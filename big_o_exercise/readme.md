@@ -11,7 +11,9 @@ constant, logarithmic, linear, quadratic, exponential
  O(n) - (or linear time) - The runtime grows linear relative to the input as the input gets arbitrarily large,
 3. `O(25)`  
  O(1) - (or "constant time") - An one step operation runs constant time relative to it's input. 
-4. `O(n<sup>2</sup> + n^3)` 
+4.<code>O(n<sup>2</sup> + n<sup>3</sup>)</code>
+
+
  
  O(n^3) - ("cubic time") - represents an algorithm whose runtime is directly proportional to the third degree("cube") of the input.
 5. `O(n + n + n + n)`
