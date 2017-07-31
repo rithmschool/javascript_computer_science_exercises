@@ -60,7 +60,7 @@ function logAtLeast10(n) {
         console.log(i);
     }
 }
-
+Time: O(n)  Space complexity:  O(1) 
 // 4.
 
 function onlyElementsAtEvenIndex(array) {
@@ -72,7 +72,7 @@ function onlyElementsAtEvenIndex(array) {
     }
     return newArray;
 }
-Time: O(n)  Space complexity:  O(1) 
+Time: O(n)  Space complexity:  O(n) 
 // 5. 
 
 function subtotals(array) {
@@ -86,4 +86,7 @@ function subtotals(array) {
     }
     return subtotalArray;
 }
+
+
+Time: O(n^2)  Space complexity:  O(n) 
 ```
