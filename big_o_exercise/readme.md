@@ -15,6 +15,8 @@ Simplify the following big O expressions as much as possible:
 9. `O(5 + 3 + 1)`
 10. `O(n + n^(1/2) + n^2 + n * log(n)^10)`
 
+O(WHATEVER)
+
 ### Part 2
 
 Determine the time and space complexities for each of the following functions. If you're not sure what these functions do, copy and paste them into the console and experiment with different inputs!
