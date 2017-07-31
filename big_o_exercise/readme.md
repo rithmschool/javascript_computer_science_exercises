@@ -4,16 +4,16 @@
 
 Simplify the following big O expressions as much as possible:
 
-1. `O(n + 10)`
-2. `O(100 * n)`
-3. `O(25)`
-4. `O(n^2 + n^3)`
-5. `O(n + n + n + n)`
-6. `O(1000 * log(n) + n)`
-7. `O(1000 * n * log(n) + n)`
-8. `O(2^n + n^2)`
-9. `O(5 + 3 + 1)`
-10. `O(n + n^(1/2) + n^2 + n * log(n)^10)`
+1. `O(n)`
+2. `O(n)`
+3. `O(1)`
+4. `O(n^3)`
+5. `O(n)`
+6. `O(log(n))`
+7. `O(n * log(n))`
+8. `O(2^n)`
+9. `O(1)`
+10. `O(n^2 + n * log(n))`
 
 ### Part 2
 
@@ -29,6 +29,10 @@ function logUpTo(n) {
     }
 }
 
+// Time: O(n)
+// Space: O(n)
+
+
 // 2. 
 
 function logAtMost10(n) {
@@ -37,6 +41,10 @@ function logAtMost10(n) {
     }
 }
 
+// Time: O(1)
+// Space: O(1)
+
+
 // 3. 
 
 function logAtLeast10(n) {
@@ -44,6 +52,10 @@ function logAtLeast10(n) {
         console.log(i);
     }
 }
+
+// Time: O(n)
+// Space: O(n)
+
 
 // 4.
 
@@ -56,6 +68,10 @@ function onlyElementsAtEvenIndex(array) {
     }
     return newArray;
 }
+
+// Time: O(n)
+// Space: O(n)
+
 
 // 5. 
 
@@ -70,4 +86,7 @@ function subtotals(array) {
     }
     return subtotalArray;
 }
+
+// Time: O(n^2)
+// Space: O(n)
 ```
