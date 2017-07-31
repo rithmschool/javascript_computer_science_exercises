@@ -4,7 +4,7 @@
 
 Simplify the following big O expressions as much as possible:
 
-1. `O(n + 10)`
+1. `O(n + 10)` Testing a change to commit
 2. `O(100 * n)`
 3. `O(25)`
 4. `O(n^2 + n^3)`
