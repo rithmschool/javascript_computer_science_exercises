@@ -17,7 +17,7 @@ constant, logarithmic, linear, quadratic, exponential
  O(n) - (or linear time) - The runtime grows on the order of the size of the input.
 
 6. `O(1000 * log(n) + n)`   
- O(log(n)) (or logarithmic time) - The runtime grows linearly on the order of the size of the input. 
+ O(n)- The runtime grows linearly on the order of the size of the input. 
 
 7. `O(1000 * n * log(n) + n)`
  O(n*log(n)) (or linearithmic time) 
@@ -52,7 +52,7 @@ function logAtMost10(n) {
         console.log(i);
     }
 }
-Time: O(n)  Space complexity:  O(1) //no new variables
+Time: O(1)  Space complexity:  O(1) //no new variables
 // 3. 
 
 function logAtLeast10(n) {
