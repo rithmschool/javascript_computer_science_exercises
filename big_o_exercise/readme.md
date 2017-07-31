@@ -28,7 +28,7 @@ constant, logarithmic, linear, quadratic, exponential
 9. `O(5 + 3 + 1)` 
  O(1) - (or "constant time") - An one step operation runs constant time relative to it's input. 
  
-10. `O(n + n^(1/2) + n^2 + n * log(n)^10)` => O(log(n))     :logarithmic
+10. `O(n + n^(1/2) + n^2 + n * log(n)^10)` => O(n^2) (or quadratic)
 
 ### Part 2
 
