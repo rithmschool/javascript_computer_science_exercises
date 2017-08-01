@@ -25,7 +25,17 @@ describe("#collectStrings", function(){
             }
         }
     }
+    var obj2 = {
+      key1: 'hello',
+      key2: 34,
+      key5: {
+        key1: 'beautiful'},
+      key3: [1,2,3,{
+        key1: 'world'}],
+      key4: '!'}
     expect(collectStrings(obj)).to.deep.equal(["foo", "bar", "baz"])
+    expect(collectStrings(obj2))
+      .to.deep.equal(['hello', 'beautiful', 'world', '!'])
   });
 });
 
