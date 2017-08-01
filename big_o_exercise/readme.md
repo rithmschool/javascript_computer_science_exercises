@@ -72,7 +72,6 @@ function subtotals(array) {
     for (var i = 0; i < array.length; i++) {
         var subtotal = 0;
         for (var j = 0; j <= i; j++) {
-          console.log(i, j);
             subtotal += array[j];
         }
         subtotalArray[i] = subtotal;
