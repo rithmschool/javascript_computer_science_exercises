@@ -57,6 +57,7 @@ function binarySearch(arr, val) {
 
 function stringifyNumbers(obj) {
   var newObj = {};
+  if(Array.isArray(obj)) newObj = [];
 
   for(let key in obj){
 
