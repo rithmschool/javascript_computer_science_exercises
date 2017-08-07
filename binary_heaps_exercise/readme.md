@@ -22,8 +22,6 @@ Implement a function called checkMaxHeap. It should check if an array is a valid
 
 Given an array of numbers, implement a function called `maxHeapify` which converts an array of numbers into a max-heap. Note that this function assumes a correct implentation of checkMaxHeap.
 
-Given an array of numbers, implement a function called `maxHeapify` which converts an array of numbers into a max-heap
-
 ### Bonus
 
 Implement the `remove` function on the `MaxBinaryHeap.prototype` This function should remove the root node in a binary heap. Make sure to re-order the heap after removal if necessary
