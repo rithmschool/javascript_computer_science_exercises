@@ -45,12 +45,26 @@ describe("#remove", function(){
   });
 });
 
+describe("#checkMaxHeap", function(){
+    it("checks if an array is a valid max heap", function(){
+    binaryHeap.insert(1)
+    binaryHeap.insert(2)
+    binaryHeap.insert(3)
+    binaryHeap.insert(4)
+    binaryHeap.insert(5)
+    binaryHeap.insert(6)
+    expect(checkMaxHeap(binaryHeap.values)).to.equal(true);
+    let anArray = [1,2,3,4,5,6];
+    expect(checkMaxHeap(anArray)).to.equal(false); 
+    })
+})
+
 describe("#maxHeapify", function(){
   it("turns an array into a max binary heap", function(){
-    var arr = [1,2,3,4,5,6,7,8,9,10]
-    var arr2 = [5,-10,15,20,35,-2,-15,40,3,8,9]
-    expect(maxHeapify(arr)).to.deep.equal([10, 9, 7, 8, 5, 6, 3, 1, 4, 2])
-    expect(maxHeapify(arr2)).to.deep.equal([40, 35, 15, 20, 9, -2, -15, -10, 3, 8, 5])
+    var arr = maxHeapify([1,2,3,4,5,6,7,8,9,10])
+    var arr2 = maxHeapify([5,-10,15,20,35,-2,-15,40,3,8,9])
+    expect(checkMaxHeap(arr)).to.equal(true)
+    expect(checkMaxHeap(arr2)).to.equal(true)
   });
 });
 

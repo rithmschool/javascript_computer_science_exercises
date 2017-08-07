@@ -18,6 +18,10 @@ Implement the `insert` function on the `MaxBinaryHeap.prototype`: This function 
 
 ### Part II
 
+Implement a function called checkMaxHeap. It should check if an array is a valid Max Heap and return true or false.
+
+Given an array of numbers, implement a function called `maxHeapify` which converts an array of numbers into a max-heap. Note that this function assumes a correct implentation of checkMaxHeap.
+
 Given an array of numbers, implement a function called `maxHeapify` which converts an array of numbers into a max-heap
 
 ### Bonus
