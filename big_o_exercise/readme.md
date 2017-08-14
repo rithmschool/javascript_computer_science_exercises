@@ -3,17 +3,32 @@
 ### Part 1
 
 Simplify the following big O expressions as much as possible:
+constant, logarithmic, linear, quadratic, exponential
 
-1. `O(n + 10)`
-2. `O(100 * n)`
-3. `O(25)`
-4. `O(n^2 + n^3)`
+1. `O(n + 10)`          
+ O(n) - (or linear time) - The runtime grows on the order of the size of 'n' or the size of the input
+2. `O(100 * n)`  
+ O(n) - (or linear time) - The runtime grows linear relative to the input as the input gets arbitrarily large,
+3. `O(25)`  
+ O(1) - (or "constant time") - An one step operation runs constant time relative to it's input. 
+4. <code>O(n<sup>2</sup> + n<sup>3</sup>)</code>
+ O(n<sup>3</sup>) - ("cubic time") - represents an algorithm whose runtime is directly proportional to the third degree("cube") of the input.
 5. `O(n + n + n + n)`
-6. `O(1000 * log(n) + n)`
+ O(n) - (or linear time) - The runtime grows on the order of the size of the input.
+
+6. `O(1000 * log(n) + n)`   
+ O(n)- The runtime grows linearly on the order of the size of the input. 
+
 7. `O(1000 * n * log(n) + n)`
+ O(n*log(n)) (or linearithmic time) 
+
 8. `O(2^n + n^2)`
-9. `O(5 + 3 + 1)`
-10. `O(n + n^(1/2) + n^2 + n * log(n)^10)`
+ O(2^n)  (or exponential time) - The runtime grows exponentially 
+
+9. `O(5 + 3 + 1)` 
+ O(1) - (or "constant time") - An one step operation runs constant time relative to it's input. 
+ 
+10. `O(n + n^(1/2) + n^2 + n * log(n)^10)` => O(n^2) (or quadratic)
 
 ### Part 2
 
@@ -28,6 +43,7 @@ function logUpTo(n) {
         console.log(i);
     }
 }
+Time: O(n)  Space complexity:  O(1) //no allocation of new variables/additional space,
 
 // 2. 
 
@@ -36,7 +52,7 @@ function logAtMost10(n) {
         console.log(i);
     }
 }
-
+Time: O(1)  Space complexity:  O(1) //no new variables
 // 3. 
 
 function logAtLeast10(n) {
@@ -44,7 +60,7 @@ function logAtLeast10(n) {
         console.log(i);
     }
 }
-
+Time: O(n)  Space complexity:  O(1) 
 // 4.
 
 function onlyElementsAtEvenIndex(array) {
@@ -56,7 +72,7 @@ function onlyElementsAtEvenIndex(array) {
     }
     return newArray;
 }
-
+Time: O(n)  Space complexity:  O(n) 
 // 5. 
 
 function subtotals(array) {
@@ -70,4 +86,7 @@ function subtotals(array) {
     }
     return subtotalArray;
 }
+
+
+Time: O(n^2)  Space complexity:  O(n) 
 ```
