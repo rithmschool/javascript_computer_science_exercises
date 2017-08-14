@@ -2,7 +2,7 @@
 
 ## Getting started
 
-For this exercise you **MUST** use recursion to solve these problems. Some of them can be done without, but it is essential that you practice recursion and make the tests pass. 
+For this exercise you **MUST** use recursion to solve these problems. Some of them can be done without, but it is essential that you practice recursion and make the tests pass.
 
 - Write a function called `productOfArray` which takes in an array of numbers and returns the product of them all
 
@@ -11,6 +11,27 @@ productOfArray([1,2,3]) // 6
 productOfArray([1,2,3,10]) // 60
 ```
 
+- Write a function called `collectStrings` that searches for a string values in a nested object. It returns an array of the values.
+
+```javascript
+var obj = {
+    stuff: "foo",
+    data: {
+        val: {
+            thing: {
+                info: "bar",
+                moreInfo: {
+                    evenMoreInfo: {
+                        weMadeIt: "baz"
+                    }
+                }
+            }
+        }
+    }
+}
+
+collectStrings(obj); //["foo", "bar", "baz"]
+```
 - Write a function called `contains` that searches for a value in a nested object. It returns true if the object contains that value.
 
 ```javascript
@@ -47,7 +68,7 @@ search([1,2,3,4,5],5) // 4
 search([1,2,3,4,5],15) // -1
 ```
 
-- Refactor your search function to use a faster algorithm called binary search [https://www.youtube.com/watch?v=JQhciTuD3E8](https://www.youtube.com/watch?v=JQhciTuD3E8). 
+- Refactor your search function to use a faster algorithm called binary search [https://www.youtube.com/watch?v=JQhciTuD3E8](https://www.youtube.com/watch?v=JQhciTuD3E8).
 
 ```javascript
 binarySearch([1,2,3,4,5],5) // 4
@@ -84,4 +105,4 @@ stringifyNumbers()
 /*/
 ```
 
-Complete [this](https://www.codewars.com/kata/mutual-recursion/train/javascript) codewars problem! 
+Complete [this](https://www.codewars.com/kata/mutual-recursion/train/javascript) codewars problem!
