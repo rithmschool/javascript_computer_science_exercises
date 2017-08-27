@@ -7,22 +7,22 @@ beforeEach(function() {
 
 describe("#HashTable", function() {
   it("is initialized correctly", function() {
-    expect(hashTable.hasOwnProperty('keyMap')).to.equal(true);
+    expect(hashTable.hasOwnProperty('keyMap')).toBe(true);
   });
 });
 
 describe("#get", function() {
   it("sets and gets a simple key", function() {
     hashTable.set(1, 'test');
-    expect(hashTable.get(1)).to.deep.equal('test');
+    expect(hashTable.get(1)).toEqual('test');
   });
 });
 
 describe("#containsKey", function() {
  it("should return true if a key exists in the hash and return false if it does not", function() {
-   expect(hashTable.containsKey('NO CHANCE!')).to.equal(false);
+   expect(hashTable.containsKey('NO CHANCE!')).toBe(false);
    hashTable.set(123, 'awesome');
-   expect(hashTable.containsKey(123)).to.equal(true);
+   expect(hashTable.containsKey(123)).toBe(true);
  });
 });
 
@@ -32,11 +32,11 @@ describe("#remove", function() {
     hashTable.set('b', 'Tim');
     hashTable.set('c', 'Elie');
     hashTable.remove('a')
-    expect(hashTable.containsKey('a')).to.equal(false);
+    expect(hashTable.containsKey('a')).toBe(false);
     hashTable.remove('b')
-    expect(hashTable.containsKey('b')).to.equal(false);
+    expect(hashTable.containsKey('b')).toBe(false);
     hashTable.remove('c')
-    expect(hashTable.containsKey('c')).to.equal(false);
+    expect(hashTable.containsKey('c')).toBe(false);
   })
 });
 
@@ -45,7 +45,7 @@ describe("#keys", function() {
     hashTable.set('123', 'awesome');
     hashTable.set('foo', 'bar');
     hashTable.set('done!', 'nice!');
-    expect(hashTable.keys()).to.deep.equal(['123', 'foo', 'done!']);
+    expect(hashTable.keys()).toEqual(['123', 'foo', 'done!']);
   })
 });
 
@@ -54,7 +54,7 @@ describe("#values", function() {
     hashTable.set('123', 'awesome');
     hashTable.set('foo', 'bar');
     hashTable.set('done!', 'nice!');
-    expect(hashTable.values()).to.deep.equal(['awesome', 'bar', 'nice!']);
+    expect(hashTable.values()).toEqual(['awesome', 'bar', 'nice!']);
   })
 });
 
@@ -65,9 +65,9 @@ describe("#setSeparateChaining", function(){
     hashTable.setSeparateChaining(5, 'Matt')
     hashTable.setSeparateChaining(10, 'Tim')
 
-    expect(hashTable.containsKey(0)).to.equal(true)
-    expect(hashTable.containsKey(5)).to.equal(true)
-    expect(hashTable.containsKey(10)).to.equal(true)
+    expect(hashTable.containsKey(0)).toBe(true)
+    expect(hashTable.containsKey(5)).toBe(true)
+    expect(hashTable.containsKey(10)).toBe(true)
 
   });
 });
@@ -79,9 +79,9 @@ describe("#getSeparateChaining", function(){
     hashTable.setSeparateChaining('5', 'Matt')
     hashTable.setSeparateChaining('10', 'Tim')
 
-    expect(hashTable.getSeparateChaining('0')).to.deep.equal('Elie')
-    expect(hashTable.getSeparateChaining('5')).to.deep.equal('Matt')
-    expect(hashTable.getSeparateChaining('10')).to.deep.equal('Tim')
+    expect(hashTable.getSeparateChaining('0')).toEqual('Elie')
+    expect(hashTable.getSeparateChaining('5')).toEqual('Matt')
+    expect(hashTable.getSeparateChaining('10')).toEqual('Tim')
 
   });
 });
@@ -93,9 +93,9 @@ describe("#setLinearProbing", function(){
     hashTable.setLinearProbing('5', 'Matt')
     hashTable.setLinearProbing('10', 'Tim')
 
-    expect(hashTable.containsKey('0')).to.equal(true)
-    expect(hashTable.containsKey('5')).to.equal(true)
-    expect(hashTable.containsKey('10')).to.equal(true)
+    expect(hashTable.containsKey('0')).toBe(true)
+    expect(hashTable.containsKey('5')).toBe(true)
+    expect(hashTable.containsKey('10')).toBe(true)
   });
 });
 
@@ -106,9 +106,9 @@ describe("#getLinearProbing", function(){
     hashTable.setLinearProbing('5', 'Matt')
     hashTable.setLinearProbing('10', 'Tim')
 
-    expect(hashTable.getLinearProbing('0')).to.deep.equal('Elie')
-    expect(hashTable.getLinearProbing('5')).to.deep.equal('Matt')
-    expect(hashTable.getLinearProbing('10')).to.deep.equal('Tim')
+    expect(hashTable.getLinearProbing('0')).toEqual('Elie')
+    expect(hashTable.getLinearProbing('5')).toEqual('Matt')
+    expect(hashTable.getLinearProbing('10')).toEqual('Tim')
 
   });
 });

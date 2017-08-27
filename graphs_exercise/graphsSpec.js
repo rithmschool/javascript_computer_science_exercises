@@ -10,18 +10,18 @@ describe("#addVertex", function(){
     graph.addVertex('A')
     graph.addVertex('B')
     graph.addVertex('C')
-    expect(graph.vertices[0]).to.equal('A')
-    expect(graph.vertices[1]).to.equal('B')
-    expect(graph.vertices[2]).to.equal('C')
-    expect(graph.vertices.length).to.equal(3)
+    expect(graph.vertices[0]).toBe('A')
+    expect(graph.vertices[1]).toBe('B')
+    expect(graph.vertices[2]).toBe('C')
+    expect(graph.vertices.length).toBe(3)
   });
   it("should add a key in the adjacency list with a value as an empty array", function(){
     graph.addVertex('A')
     graph.addVertex('B')
     graph.addVertex('C')
-    expect(graph.adjacencyList['A']).to.deep.equal([])
-    expect(graph.adjacencyList['B']).to.deep.equal([])
-    expect(graph.adjacencyList['C']).to.deep.equal([])
+    expect(graph.adjacencyList['A']).toEqual([])
+    expect(graph.adjacencyList['B']).toEqual([])
+    expect(graph.adjacencyList['C']).toEqual([])
   });
 });
 
@@ -35,11 +35,11 @@ describe("#addEdge", function(){
     graph.addEdge('A','C')
     graph.addEdge('B','D')
     graph.addEdge('C','D')
-    expect(graph.vertices.length).to.equal(4)
-    expect(graph.adjacencyList['A']).to.contain('B','C')
-    expect(graph.adjacencyList['B']).to.contain('A','D')
-    expect(graph.adjacencyList['C']).to.contain('A','D')
-    expect(graph.adjacencyList['D']).to.contain('C','B')
+    expect(graph.vertices.length).toBe(4)
+    expect(graph.adjacencyList['A']).toContain('B', 'C')
+    expect(graph.adjacencyList['B']).toContain('A', 'D')
+    expect(graph.adjacencyList['C']).toContain('A', 'D')
+    expect(graph.adjacencyList['D']).toContain('C', 'B')
   });
 });
 
@@ -56,11 +56,11 @@ describe("#removeEdge", function(){
 
     graph.removeEdge('B','A')
     graph.removeEdge('C','D')
-    expect(graph.vertices.length).to.equal(4)
-    expect(graph.adjacencyList['A']).to.contain('C')
-    expect(graph.adjacencyList['B']).to.contain('D')
-    expect(graph.adjacencyList['C']).to.contain('A')
-    expect(graph.adjacencyList['D']).to.contain('B')
+    expect(graph.vertices.length).toBe(4)
+    expect(graph.adjacencyList['A']).toContain('C')
+    expect(graph.adjacencyList['B']).toContain('D')
+    expect(graph.adjacencyList['C']).toContain('A')
+    expect(graph.adjacencyList['D']).toContain('B')
   });
 });
 
@@ -77,9 +77,9 @@ describe("#removeVertex", function(){
 
     graph.removeVertex('C')
     graph.removeVertex('B')
-    expect(graph.vertices.length).to.equal(2)
-    expect(graph.adjacencyList['A']).to.be.empty
-    expect(graph.adjacencyList['D']).to.be.empty
+    expect(graph.vertices.length).toBe(2)
+    expect(graph.adjacencyList['A']).toBeDefined()
+    expect(graph.adjacencyList['D']).toBeDefined()
   });
 });
 
@@ -118,7 +118,7 @@ describe("#depthFirstSearch", function(){
     graph.addEdge('R','T')
     graph.addEdge('W','T')
 
-    expect(graph.depthFirstSearch('S')).to.deep.equal(["S", "U", "V", "W", "T", "R", "Q", "Y", "X", "P"])
+    expect(graph.depthFirstSearch('S')).toEqual(["S", "U", "V", "W", "T", "R", "Q", "Y", "X", "P"])
   });
 });
 
@@ -157,7 +157,7 @@ describe("#breadthFirstSearch", function(){
     graph.addEdge('R','T')
     graph.addEdge('W','T')
 
-    expect(graph.breadthFirstSearch('S')).to.deep.equal(["S", "P", "U", "X", "Q", "V", "Y", "R", "W", "T"])
+    expect(graph.breadthFirstSearch('S')).toEqual(["S", "P", "U", "X", "Q", "V", "Y", "R", "W", "T"])
   });
 });
 
@@ -197,8 +197,8 @@ describe("#dijkstra", function(){
     g.addEdge('R','T', 6)
     g.addEdge('W','T', 7)
 
-    expect(g.Dijkstra('S','T')[0]).to.equal(15)
-    expect(g.Dijkstra('S','T')[1]).to.deep.equal(['S','P','Q','R','T'])
+    expect(g.Dijkstra('S','T')[0]).toBe(15)
+    expect(g.Dijkstra('S','T')[1]).toEqual(['S','P','Q','R','T'])
   });
 });
 

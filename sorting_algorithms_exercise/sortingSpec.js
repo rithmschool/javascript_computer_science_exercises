@@ -11,12 +11,12 @@ beforeEach(function(){
 describe("#bubbleSort", function(){
 
   it("should sort an array of positive and negative numbers ", function(){
-    expect(bubbleSort(unsorted)).to.deep.equal(sorted);
-    expect(bubbleSort(unsortedNegative)).to.deep.equal(sortedNegative);
+    expect(bubbleSort(unsorted)).toEqual(sorted);
+    expect(bubbleSort(unsortedNegative)).toEqual(sortedNegative);
   });
 
   it("should return an empty array if passed an empty array", function(){
-    expect(bubbleSort([])).to.deep.equal([]);
+    expect(bubbleSort([])).toEqual([]);
   });
 
 });
@@ -24,12 +24,12 @@ describe("#bubbleSort", function(){
 describe("#selectionSort", function(){
 
   it("should sort an array of positive and negative numbers ", function(){
-    expect(selectionSort(unsorted)).to.deep.equal(sorted);
-    expect(selectionSort(unsortedNegative)).to.deep.equal(sortedNegative);
+    expect(selectionSort(unsorted)).toEqual(sorted);
+    expect(selectionSort(unsortedNegative)).toEqual(sortedNegative);
   });
 
   it("should return an empty array if passed an empty array", function(){
-    expect(selectionSort([])).to.deep.equal([]);
+    expect(selectionSort([])).toEqual([]);
   });
 
 });
@@ -38,12 +38,12 @@ describe("#selectionSort", function(){
 describe("#insertionSort", function(){
 
   it("should sort an array of positive and negative numbers ", function(){
-    expect(insertionSort(unsorted)).to.deep.equal(sorted);
-    expect(insertionSort(unsortedNegative)).to.deep.equal(sortedNegative);
+    expect(insertionSort(unsorted)).toEqual(sorted);
+    expect(insertionSort(unsortedNegative)).toEqual(sortedNegative);
   });
 
   it("should return an empty array if passed an empty array", function(){
-    expect(insertionSort([])).to.deep.equal([]);
+    expect(insertionSort([])).toEqual([]);
   });
 
 });
@@ -52,21 +52,21 @@ describe("#mergeSort", function(){
 
   describe("#merge", function() {
     it("should merge two sorted arrays into one sorted array", function() {
-      expect(merge([1, 3, 5, 7],[-2, 4, 6, 8])).to.deep.equal([-2, 1, 3, 4, 5, 6, 7, 8]);
+      expect(merge([1, 3, 5, 7],[-2, 4, 6, 8])).toEqual([-2, 1, 3, 4, 5, 6, 7, 8]);
     });
 
     it("should work for arrays of different sizes", function() {
-      expect(merge([-5, 2],[0, 1, 2, 6])).to.deep.equal([-5, 0, 1, 2, 2, 6]);
+      expect(merge([-5, 2],[0, 1, 2, 6])).toEqual([-5, 0, 1, 2, 2, 6]);
     });
   })
 
   it("should sort an array of positive and negative numbers ", function(){
-    expect(mergeSort(unsorted)).to.deep.equal(sorted);
-    expect(mergeSort(unsortedNegative)).to.deep.equal(sortedNegative);
+    expect(mergeSort(unsorted)).toEqual(sorted);
+    expect(mergeSort(unsortedNegative)).toEqual(sortedNegative);
   });
 
   it("should return an empty array if passed an empty array", function(){
-    expect(mergeSort([])).to.deep.equal([]);
+    expect(mergeSort([])).toEqual([]);
   });
 
 });
@@ -75,27 +75,27 @@ describe("#quickSort", function(){
 
   describe("#pivot", function() {
     it("should return the new index of the pivot element", function() {
-      expect(pivot(unsorted)).to.equal(2);
-      expect(pivot(unsortedNegative)).to.equal(4);
+      expect(pivot(unsorted)).toBe(2);
+      expect(pivot(unsortedNegative)).toBe(4);
     });
 
     it("should mutate the input so that the pivot is in the right place", function() {
       pivot(unsorted);
       pivot(unsortedNegative);
-      expect(unsorted.slice(0,2)).to.include.members(sorted.slice(0,2));
-      expect(unsorted.slice(3)).to.include.members(sorted.slice(3));
-      expect(unsortedNegative.slice(0,4)).to.include.members(sorted.slice(0,4));
-      expect(unsortedNegative.slice(5)).to.include.members(sorted.slice(5));
+      expect(unsorted.slice(0,2)).toEqual(sorted.slice(0,2));
+      expect(unsorted.slice(3)).toEqual(sorted.slice(3));
+      expect(unsortedNegative.slice(0,4)).toEqual(sorted.slice(0,4));
+      expect(unsortedNegative.slice(5)).toEqual(sorted.slice(5));
     });
   });
 
   it("should sort an array of positive and negative numbers ", function(){
-    expect(quickSort(unsorted)).to.deep.equal(sorted);
-    expect(quickSort(unsortedNegative)).to.deep.equal(sortedNegative);
+    expect(quickSort(unsorted)).toEqual(sorted);
+    expect(quickSort(unsortedNegative)).toEqual(sortedNegative);
   });
 
   it("should return an empty array if passed an empty array", function(){
-    expect(quickSort([])).to.deep.equal([]);
+    expect(quickSort([])).toEqual([]);
   });
 
 });
